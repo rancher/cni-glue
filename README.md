@@ -1,7 +1,7 @@
-cniglue
+CNI Glue
 ========
 
-A microservice that does micro things.
+Simple binding to plug CNI into Rancher and runc hooks.
 
 ## Building
 
