@@ -23,7 +23,10 @@ func Prestart() error {
 	if err != nil {
 		return err
 	}
+	return Pre(state)
+}
 
+func Pre(state *DockerPluginState) error {
 	if err := SetupResolvConf(state); err != nil {
 		return err
 	}
@@ -42,5 +45,9 @@ func Poststop() error {
 		return err
 	}
 
+	return Post(state)
+}
+
+func Post(state *DockerPluginState) error {
 	return CNIDel(state)
 }
