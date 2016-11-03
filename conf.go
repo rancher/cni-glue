@@ -78,6 +78,7 @@ func LookupPluginState(container types.ContainerJSON) (*DockerPluginState, error
 	if err != nil {
 		return nil, err
 	}
+	result.ContainerID = container.ID
 	result.Spec = *spec
 	result.HostConfig = *container.HostConfig
 	result.Config = *container.Config
